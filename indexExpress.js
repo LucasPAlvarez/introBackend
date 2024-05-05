@@ -40,7 +40,7 @@ const unknownEndpoint = (request,response) =>{
     })
 }
 
-
+app.use(express.static('dist'))
 //--
 
 const autoGenerateId = () =>{
@@ -50,9 +50,9 @@ const autoGenerateId = () =>{
     return higherId + 1
 }
 
-app.get('/', (request,response) => {
-    response.send("<h1>Hello world</h1>")
-})
+// app.get('/', (request,response) => {
+//     response.send("<h1>Hello world</h1>")
+// })
 
 app.get('/api/notes', (request,response) => {
     response.json(notes)
